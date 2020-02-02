@@ -16,7 +16,8 @@ jobs:
     - name: Space cleanup
       env:
         DEBIAN_FRONTEND: noninteractive
-      run:
+      run: |
+        sudo -E apt-get -y purge azure-cli ghc* zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
         sudo rm -rf /usr/share/dotnet /etc/mysql /etc/php /etc/apt/sources.list.d
         sudo -E apt-get update
         sudo -E apt-get -y install build-essential libncurses-dev libssl-dev libelf-dev bison bc flex rsync git
@@ -24,17 +25,16 @@ jobs:
         sudo -E apt-get clean
         
     - name: Get config
-      run:
+      run: |
         wget https://gist.githubusercontent.com/BROBIRD/54df01d7bf0a944aac0940d505ebd6a6/raw/ec1bd92871556ddd4c4292929108d9566ac08298/.config
         scripts/config --disable MODULE_SIG
         scripts/config --disable DEBUG_INFO
         
     - name: Compile
-      run:
-        make -j$(nproc) deb-pkg
+      run: make -j$(nproc) deb-pkg
         
     - name: Prepare artifact
-      run:
+      run: |
         mkdir ../debs/
         ls ../*.deb  |xargs -i cp {} ../debs/
           
