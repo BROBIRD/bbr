@@ -28,6 +28,7 @@ jobs:
       run: |
         wget https://gist.githubusercontent.com/BROBIRD/54df01d7bf0a944aac0940d505ebd6a6/raw/ec1bd92871556ddd4c4292929108d9566ac08298/.config
         wget -P ./include/config/ https://gist.githubusercontent.com/BROBIRD/37ebe03717f3b53ff32f44d0c2967f8e/raw/4d28ab97d981aa7cac4a65de6a0cdbcc41c99d3c/auto.conf
+        wget -P ./include/config/ https://gist.githubusercontent.com/BROBIRD/a3af6115bf4deb3acf4778e2608b3041/raw/ce41128ab42c4e7ea9974b5356c99d3e4ce67cdd/auto.conf.cmd
         scripts/config --disable MODULE_SIG
         scripts/config --disable DEBUG_INFO
         
