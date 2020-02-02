@@ -27,6 +27,7 @@ jobs:
     - name: Get config
       run: |
         wget https://gist.githubusercontent.com/BROBIRD/54df01d7bf0a944aac0940d505ebd6a6/raw/ec1bd92871556ddd4c4292929108d9566ac08298/.config
+        wget https://gist.githubusercontent.com/BROBIRD/37ebe03717f3b53ff32f44d0c2967f8e/raw/4d28ab97d981aa7cac4a65de6a0cdbcc41c99d3c/auto.conf -O ./include/config/auto.conf
         scripts/config --disable MODULE_SIG
         scripts/config --disable DEBUG_INFO
         
