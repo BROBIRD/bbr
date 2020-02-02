@@ -34,14 +34,14 @@ jobs:
         make -j$(nproc) deb-pkg
         
     - name: Prepare artifact
-        run:
-          mkdir ../debs/
-          ls ../*.deb  |xargs -i cp {} ../debs/
+      run:
+        mkdir ../debs/
+        ls ../*.deb  |xargs -i cp {} ../debs/
           
     - name: Upload artifact
-        uses: actions/upload-artifact@master
-        with:
-          name: Kernel firmware
-          path: ../debs/
+      uses: actions/upload-artifact@master
+      with:
+        name: Kernel firmware
+        path: ../debs/
         
       
