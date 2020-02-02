@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2alpha
+      uses: actions/checkout@master
       with:
        ref: v2alpha
        
